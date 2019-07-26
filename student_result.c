@@ -25,16 +25,18 @@ int main(void){
     /*Taking input from the user */
     for(int i=0;i<maxstud;i++)
     {
-        printf("Enter the name of the student:");
+        printf("\n\n");
+        printf("-----STUDENT NO:%d-----\n",i+1);
+        printf("Student Name:");
         scanf("%s",stud[i].name);
         stud[i].class=class;
-        printf("Enter the marks in science:");
+        printf("Enter the Marks\n");
+        printf("Science:");
         scanf("%d",&stud[i].science);
-        printf("Enter the marks in maths:");
+        printf("Maths:");
         scanf("%d",&stud[i].maths);
-        printf("Enter the marks in computer:");
+        printf("Computer:");
         scanf("%d",&stud[i].computer);
-        printf("\n\n");
         fflush(NULL);
     }
 
@@ -43,10 +45,10 @@ int main(void){
     printf("\n\n---------STUDENT DETAILS---------\n\n");
     for(int i=0;i<maxstud;i++)
     {
-        printf("NAME:::::%s\n",stud[i].name);
-        printf("CLASS:::::%d\n",stud[i].class);
-        printf("Marks:\tscience:%d\tmaths:%d\tcomputer:%d",stud[i].science,stud[i].maths,stud[i].computer);
-        printf("\n\n");
+        printf("NAME:%s\n",stud[i].name);
+        printf("CLASS:%d\n",stud[i].class);
+        printf("---MARKS---\nScience:%d\nMaths:%d\nComputer:%d",stud[i].science,stud[i].maths,stud[i].computer);
+        printf("\n\n\n");
     }
 
 }
@@ -57,7 +59,10 @@ int main(void){
 This program takes input of a student and prints their details using structure in c
 
 
-
+->Features to add
+1.Auto grading
+2.Imput testing
+3.More(not decided yet)
 
 
 
