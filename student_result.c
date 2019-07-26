@@ -2,7 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-struct student{
+struct student //making student structure
+{
     char name[50];
     int class;
     int science;
@@ -20,6 +21,8 @@ int main(void){
     printf("Enter the class name:");
     fgets(classstr,sizeof(int),stdin);
     class=atoi(classstr);
+
+    /*Taking input from the user */
     for(int i=0;i<maxstud;i++)
     {
         printf("Enter the name of the student:");
@@ -34,9 +37,10 @@ int main(void){
         printf("\n\n");
         fflush(NULL);
     }
+
+
+    /*Printing the details of the students */
     printf("\n\n---------STUDENT DETAILS---------\n\n");
-    
-    
     for(int i=0;i<maxstud;i++)
     {
         printf("NAME:::::%s\n",stud[i].name);
@@ -46,3 +50,15 @@ int main(void){
     }
 
 }
+
+/*
+----------STUDENT RESULT VIEWER----------
+
+This program takes input of a student and prints their details using structure in c
+
+
+
+
+
+
+ */
