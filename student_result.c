@@ -11,6 +11,23 @@ struct student //making student structure
     int computer;
 };
 
+int legitMarkChecker(){
+    int mark;
+    while(1){
+        scanf("%d",&mark);
+        if(mark<100 && mark>0){
+            break;
+        }
+        else
+        {
+            printf("-----INVALID INPUT-----\n");
+            printf("Enter the mark again:");
+        }
+        
+    }
+    return mark;
+    }
+
 int main(void){
     int maxstud,class;
     char maxstudstr[sizeof(int)],classstr[sizeof(int)];
@@ -32,11 +49,11 @@ int main(void){
         stud[i].class=class;
         printf("Enter the Marks\n");
         printf("Science:");
-        scanf("%d",&stud[i].science);
+        stud[i].science=legitMarkChecker();
         printf("Maths:");
-        scanf("%d",&stud[i].maths);
+        stud[i].maths=legitMarkChecker();
         printf("Computer:");
-        scanf("%d",&stud[i].computer);
+        stud[i].computer=legitMarkChecker();
         fflush(NULL);
     }
 
@@ -47,7 +64,7 @@ int main(void){
     {
         printf("NAME:%s\n",stud[i].name);
         printf("CLASS:%d\n",stud[i].class);
-        printf("---MARKS---\nScience:%d\nMaths:%d\nComputer:%d",stud[i].science,stud[i].maths,stud[i].computer);
+        printf("MARKS:::Science:%d\tMaths:%d\tComputer:%d",stud[i].science,stud[i].maths,stud[i].computer);
         printf("\n\n\n");
     }
 
@@ -61,9 +78,13 @@ This program takes input of a student and prints their details using structure i
 
 ->Features to add
 1.Auto grading
-2.Imput testing
+2.Input testing
 3.More(not decided yet)
 
+->ADDITIONS
+1.A legit mark fuction is added to check if the input is a mark in the limits of 0 and 100
 
+->ISSUES
+1.legitMarkChecker() runs to an infinite loop when input other than a number is entered
 
  */
