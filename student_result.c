@@ -9,12 +9,12 @@ struct student //making student structure
     int science;
     int maths;
     int computer;
+    float average;
     char grade;
 };
 
 char grading(float mark){
     char grad;
-    printf ("%d",mark);
     if (mark>90){
         grad='O';
     }
@@ -73,7 +73,7 @@ int main(void){
     fgets(maxstudstr,sizeof(int),stdin);
     maxstud=atoi(maxstudstr);
     struct student stud[maxstud];
-    printf("Enter the class name:");
+    printf("Which class:");
     fgets(classstr,sizeof(int),stdin);
     class=atoi(classstr);
 
@@ -93,7 +93,8 @@ int main(void){
         printf("Computer:");
         stud[i].computer=legitMarkChecker();
         fflush(NULL);
-        avgmark=((stud[i].computer+stud[i].maths+stud[i].science)/3);
+        avgmark=((float)(stud[i].computer+stud[i].maths+stud[i].science)/3);
+        stud[i].average=avgmark;
         stud[i].grade=grading(avgmark);
     }
 
@@ -105,6 +106,7 @@ int main(void){
         printf("NAME:%s\n",stud[i].name);
         printf("CLASS:%d\n",stud[i].class);
         printf("MARKS:::Science:%d\tMaths:%d\tComputer:%d",stud[i].science,stud[i].maths,stud[i].computer);
+        printf("\nYour Average:%0.2f",stud[i].average);
         printf("\nYour Grade:%c",stud[i].grade);
         printf("\n\n\n");
     }
