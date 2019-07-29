@@ -14,7 +14,8 @@ struct student //making student structure
 
 char grading(float mark){
     char grad;
-    if (mark<90){
+    printf ("%d",mark);
+    if (mark>90){
         grad='O';
     }
     else if (mark>80)
@@ -50,7 +51,7 @@ int legitMarkChecker(){
     int mark;
     while(1){
         scanf("%d",&mark);
-        if(mark<100 && mark>0){
+        if(mark<=100 && mark>0){
             break;
         }
         else
@@ -62,6 +63,7 @@ int legitMarkChecker(){
     }
     return mark;
     }
+
 
 int main(void){
     int maxstud,class;
@@ -91,7 +93,7 @@ int main(void){
         printf("Computer:");
         stud[i].computer=legitMarkChecker();
         fflush(NULL);
-        avgmark=(stud[i].computer+stud[i].maths+stud[i].science/3);
+        avgmark=((stud[i].computer+stud[i].maths+stud[i].science)/3);
         stud[i].grade=grading(avgmark);
     }
 
@@ -103,6 +105,7 @@ int main(void){
         printf("NAME:%s\n",stud[i].name);
         printf("CLASS:%d\n",stud[i].class);
         printf("MARKS:::Science:%d\tMaths:%d\tComputer:%d",stud[i].science,stud[i].maths,stud[i].computer);
+        printf("\nYour Grade:%c",stud[i].grade);
         printf("\n\n\n");
     }
 
