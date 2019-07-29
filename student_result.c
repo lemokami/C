@@ -9,7 +9,42 @@ struct student //making student structure
     int science;
     int maths;
     int computer;
+    char grade;
 };
+
+char grading(float mark){
+    char grad;
+    if (mark<90){
+        grad='O';
+    }
+    else if (mark>80)
+    {
+        grad='A';
+
+    }
+    else if (mark>70)
+    {
+        grad='B';
+
+    }
+    else if (mark>60)
+    {
+        grad='C';
+
+    }
+    else if (mark>50)
+    {
+        grad='D';
+    }
+    else if (mark>40)
+    {
+        grad='E';
+    }
+    else{
+        grad='F';
+    }
+    return grad;
+}
 
 int legitMarkChecker(){
     int mark;
@@ -30,6 +65,7 @@ int legitMarkChecker(){
 
 int main(void){
     int maxstud,class;
+    float avgmark;
     char maxstudstr[sizeof(int)],classstr[sizeof(int)];
     printf("Enter the no of students:");
     fgets(maxstudstr,sizeof(int),stdin);
@@ -55,6 +91,8 @@ int main(void){
         printf("Computer:");
         stud[i].computer=legitMarkChecker();
         fflush(NULL);
+        avgmark=(stud[i].computer+stud[i].maths+stud[i].science/3);
+        stud[i].grade=grading(avgmark);
     }
 
 
