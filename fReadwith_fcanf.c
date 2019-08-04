@@ -24,11 +24,14 @@ int main(){
     
     printf("Third word : %s  \n",str3);
     
+    fclose(fp);
+    fp = NULL;
     return 0;
 }
 
 /*
 
 ->fscanf() will stop reading if a whitespace if found like in the case of scanf
+->file must be closed after fopen()
 
  */
