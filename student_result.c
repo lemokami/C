@@ -78,7 +78,7 @@ int main(void){
     class=atoi(classstr);
 
     /*Taking input from the user */
-    for(int i=0;i<maxstud;i++)
+        for(int i=0;i<maxstud;i++)
     {
         printf("\n\n");
         printf("-----STUDENT NO:%d-----\n",i+1);
@@ -99,7 +99,7 @@ int main(void){
     }
 
 
-    /*Printing the details of the students */
+    /*Printing the details of the students*/
     printf("\n\n---------STUDENT DETAILS---------\n\n");
     for(int i=0;i<maxstud;i++)
     {
@@ -110,8 +110,9 @@ int main(void){
         printf("\nYour Grade:%c",stud[i].grade);
         printf("\n\n\n");
     }
-
 }
+
+
 
 /*
 ----------STUDENT RESULT VIEWER----------
