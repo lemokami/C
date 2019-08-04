@@ -20,5 +20,9 @@ int main(){
         printf("%s",str);
     }
 
+    fclose(fp);
+    
+    fp=NULL;
+    
     return 0;
 }
