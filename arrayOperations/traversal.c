@@ -24,4 +24,5 @@ void main()
         j++;
     }
     printf("\n");
+    free(arr);
 }
