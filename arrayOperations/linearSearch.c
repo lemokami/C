@@ -50,5 +50,5 @@ void main()
     {
         printf("Element not found\n");
     }
-    
+    free(numarr);
 }
