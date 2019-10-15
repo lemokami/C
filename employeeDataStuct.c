@@ -19,22 +19,33 @@ void fgetsCheck(char *parr,int len){ //to check and clear '\n' if it is the end 
         *(parr+(len-1))='\0';
 
 }
-void main()
+int main()
 {
-    int salary,leng;
-    struct employee emp; //emp of employee structure type
-    printf("Enter Employee Name:");
-    fgets(emp.name,50,stdin);
-    leng=strlen(emp.name); //strlen to check for the end of the string
-    fgetsCheck(emp.name,leng);
-    printf("Enter his/her dob (dd/mm/yyyy) :");
-    fgets(emp.dob,20,stdin);
-    leng=strlen(emp.dob);
-    fgetsCheck(emp.dob,leng);
-    printf("Enter the salary:");
-    scanf("%d",&salary);
-    emp.salary=salary;
-    
-    /*Printing the values */
-    printf("\n\nNAME:%s\nDOB:%s\nSALARY:%d\n",emp.name,emp.dob,emp.salary);
+    int salary,leng,n=1,i=0;
+    struct employee emp[10]; //emp of employees structure type
+    printf("Enter no. of employes details u want to store");
+    scanf("%d",&n);
+    while(i<n){
+      printf("Enter the following details of person %d \n ",i+1);
+      printf("Employee Name:");
+      fgets(emp[i].name,50,stdin);
+      leng=strlen(emp[i].name); //strlen to check for the end of the string
+      fgetsCheck(emp[i].name,leng);
+      printf("His/her dob (dd/mm/yyyy) :");
+      fgets(emp[i].dob,20,stdin);
+      leng=strlen(emp[i].dob);
+      fgetsCheck(emp[i].dob,leng);
+      printf("Salary:");
+      scanf("%d",&salary);
+      emp[i].salary=salary;
+      i++;
     }
+    i=0;
+    /*Printing the values */
+    while(i<n){
+      printf("Details of person %d \n",i+1);
+      printf("\n\nNAME:%s\nDOB:%s\nSALARY:%d\n",emp[i].name,emp[i].dob,emp[i].salary);
+    }
+    getch();
+    return(0);
+   }
