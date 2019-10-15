@@ -6,10 +6,9 @@ int SwapWithValue(int x,int y)//pass by value
 {
     printf("\n----------Pass by value----------\n\n");
     printf("\nValues in main: \t\n first number:%d \t\n second number:%d\n\n",x,y);
-    int temp;
-    temp=x;
-    x=y;
-    y=temp;
+    x=x+y;
+    y=x-y;
+    x=x-y;
     /*Funtion can't return two values(unless pointers are used) so printing inside the function */
     printf("The first number is now:%d\n",x);
     printf("The second number is now:%d\n",y);
@@ -18,10 +17,9 @@ int SwapWithValue(int x,int y)//pass by value
 
 void SwapWithReference(int *x,int *y)//pass by reference
 {
-    int temp;
-    temp=*x;
-    *x=*y;
-    *y=temp;
+    *y=*x+*y;
+    *x=*y-*x;
+    *y=*y-*x;
 }
 void main(){
 
